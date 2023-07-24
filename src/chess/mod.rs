@@ -644,7 +644,7 @@ impl Chess {
                         PieceType::BISHOP => fen.push_str("B"),
                         PieceType::QUEEN => fen.push_str("Q"),
                         PieceType::KING => fen.push_str("K"),
-                        _ => panic!("error generating FEN"),
+                        // _ => panic!("error generating FEN"),
                     }
                 } else {
                     match piece.piece_type {
@@ -654,7 +654,7 @@ impl Chess {
                         PieceType::BISHOP => fen.push_str("b"),
                         PieceType::QUEEN => fen.push_str("q"),
                         PieceType::KING => fen.push_str("k"),
-                        _ => panic!("error generating FEN"),
+                        // _ => panic!("error generating FEN"),
                     }
                 }
             } else {

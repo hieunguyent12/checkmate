@@ -12,12 +12,12 @@ pub enum MoveType {
     Promotion = 32,
 }
 
-impl MoveType {
-    /// Convert a Move type to its associated value
-    pub fn to_value(&self) -> u8 {
-        *self as u8
-    }
-}
+// impl MoveType {
+//     // Convert a Move type to its associated value
+//     // pub fn to_value(&self) -> u8 {
+//     //     *self as u8
+//     // }
+// }
 
 #[derive(Debug, Clone, Copy)]
 pub struct Move {
