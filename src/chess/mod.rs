@@ -31,26 +31,26 @@ use self::constants::{
 
 #[derive(Clone, Debug)]
 pub struct Kings {
-    white: Option<SquareCoordinate>,
-    black: Option<SquareCoordinate>,
+    pub white: Option<SquareCoordinate>,
+    pub black: Option<SquareCoordinate>,
 }
 
 pub struct Chess {
     pub board: Board,
-    turn: Color,
+    pub turn: Color,
 
     /// the kings' positions on the board
-    kings: Kings,
-    castling_rights: CastlingRights,
-    history: MoveHistory,
+    pub kings: Kings,
+    pub castling_rights: CastlingRights,
+    pub history: MoveHistory,
     pub white_captures: Vec<Piece>,
     pub black_captures: Vec<Piece>,
 
     // /// Record each unique positions on the board.
     // /// If any position occurs 3 times at any point in time, the game is declared draw
     unique_positions: HashMap<String, u8>,
-    half_moves: u8,
-    full_moves: u8,
+    pub half_moves: u8,
+    pub full_moves: u8,
     pub en_passant_sq: Option<SquareCoordinate>,
 }
 
