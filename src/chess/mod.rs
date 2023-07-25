@@ -21,8 +21,7 @@ use utils::*;
 pub use constants::{Color, BOARD_MAP, FILES};
 pub use piece::{Piece, PieceType};
 pub use play_move::Move;
-pub use square::SquareCoordinate;
-pub use square::SquareCoordinateExt;
+pub use square::{Square, SquareCoordinate, SquareCoordinateExt};
 pub use utils::{
     convert_algebraic_notation_to_index, convert_index_to_algebraic_notation, is_valid,
 };

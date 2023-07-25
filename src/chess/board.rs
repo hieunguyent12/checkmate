@@ -16,6 +16,10 @@ impl Board {
         }
     }
 
+    pub fn ptr(&self) -> *const Square {
+        self._board.as_ptr()
+    }
+
     /// Return the PieceType and its associated value on a square. Return a ChessError if the index is out of range
     pub fn get(&self, sq: SquareCoordinate) -> ChessResult<Option<Piece>> {
         let idx = self.is_valid(sq.to_index())?;
