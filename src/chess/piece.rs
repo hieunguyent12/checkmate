@@ -38,7 +38,15 @@ impl PieceType {
         }
     }
 
-    pub fn from_string() -> PieceType {
-        todo!()
+    pub fn from_string(value: &str) -> Option<PieceType> {
+        match value.to_lowercase().as_str() {
+            "p" => Some(PieceType::PAWN),
+            "n" => Some(PieceType::KNIGHT),
+            "b" => Some(PieceType::BISHOP),
+            "r" => Some(PieceType::ROOK),
+            "q" => Some(PieceType::QUEEN),
+            "k" => Some(PieceType::KING),
+            _ => None,
+        }
     }
 }

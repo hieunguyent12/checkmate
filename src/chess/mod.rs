@@ -18,15 +18,18 @@ use std::collections::HashMap;
 use std::ops::Range;
 use utils::*;
 
-pub use constants::Color;
-pub use piece::PieceType;
+pub use constants::{Color, BOARD_MAP, FILES};
+pub use piece::{Piece, PieceType};
 pub use play_move::Move;
 pub use square::SquareCoordinate;
 pub use square::SquareCoordinateExt;
+pub use utils::{
+    convert_algebraic_notation_to_index, convert_index_to_algebraic_notation, is_valid,
+};
 
 use self::constants::{
-    BISHOP_DELTAS, BLACK_PAWN_DELTAS, BOARD_MAP, BOARD_SIZE, COLOR_MASK, KING_DELTAS,
-    KNIGHT_DELTAS, QUEEN_DELTAS, ROOK_DELTAS, WHITE_PAWN_DELTAS,
+    BISHOP_DELTAS, BLACK_PAWN_DELTAS, BOARD_SIZE, COLOR_MASK, KING_DELTAS, KNIGHT_DELTAS,
+    QUEEN_DELTAS, ROOK_DELTAS, WHITE_PAWN_DELTAS,
 };
 
 #[derive(Clone, Debug)]
