@@ -76,7 +76,9 @@ impl Chess {
         }
     }
 
+    /// Make a move on the board
     pub fn play_move(&mut self, m: Move) -> ChessResult<()> {
+        // TODO: check if it is a legal move 
         self.make_move(m)?;
         self.change_turn();
 
@@ -240,6 +242,11 @@ impl Chess {
         let piece = self.get(sq)?.ok_or(ChessError::UnknownError(
             "Can't generate moves for empty square".to_string(),
         ))?;
+        
+        if piece.color != self.turn {
+            return Ok(vec![]);
+        }
+
         let mut legal_moves = vec![];
         let pseudo_legal_moves = match piece.piece_type {
             PieceType::KING => self.king_moves(sq),
@@ -853,6 +860,7 @@ impl Chess {
             }
             self.undo_move()?;
         }
+
 
         return Ok(nodes);
     }

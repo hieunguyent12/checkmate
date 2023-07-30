@@ -49,4 +49,30 @@ impl PieceType {
             _ => None,
         }
     }
+
+    pub fn to_string(&self) -> Option<&str> {
+        use PieceType::*;
+
+        Some(match self {
+           PAWN => "p", 
+           KNIGHT=> "n", 
+           BISHOP=> "b", 
+           ROOK => "r", 
+           QUEEN => "q", 
+           KING=> "k", 
+        })
+    }
+
+    pub fn to_string_verbose(&self) -> Option<&str> {
+        use PieceType::*;
+
+        Some(match self {
+           PAWN => "pawn", 
+           KNIGHT=> "knight", 
+           BISHOP=> "bishop", 
+           ROOK => "rook", 
+           QUEEN => "queen", 
+           KING=> "king", 
+        })
+    }
 }
