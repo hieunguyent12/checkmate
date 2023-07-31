@@ -50,6 +50,18 @@ impl PieceType {
         }
     }
 
+    pub fn from_string_verbose(value: &str) -> Option<PieceType> {
+        match value.to_lowercase().as_str() {
+            "pawn" => Some(PieceType::PAWN),
+            "knight" => Some(PieceType::KNIGHT),
+            "bishop" => Some(PieceType::BISHOP),
+            "rook" => Some(PieceType::ROOK),
+            "queen" => Some(PieceType::QUEEN),
+            "king" => Some(PieceType::KING),
+            _ => None,
+        }
+    }
+
     pub fn to_string(&self) -> Option<&str> {
         use PieceType::*;
 
